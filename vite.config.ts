@@ -1,10 +1,17 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite"
+import { fileURLToPath } from "node:url"
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
 	plugins: [react(), TanStackRouterVite()],
+
+	resolve: {
+		alias: {
+			"~": fileURLToPath(new URL("./src", import.meta.url)),
+		},
+	},
 
 	// Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
 	//
