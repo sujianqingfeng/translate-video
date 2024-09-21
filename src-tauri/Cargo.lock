@@ -2742,6 +2742,18 @@ dependencies = [
 ]
 
 [[package]]
+name = "tauri-plugin-store"
+version = "0.0.0"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v1#4af2ab9fd841db90be730554e6bc175af8ce7380"
+dependencies = [
+ "log",
+ "serde",
+ "serde_json",
+ "tauri",
+ "thiserror",
+]
+
+[[package]]
 name = "tauri-runtime"
 version = "0.14.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3076,6 +3088,7 @@ dependencies = [
  "serde_json",
  "tauri",
  "tauri-build",
+ "tauri-plugin-store",
 ]
 
 [[package]]

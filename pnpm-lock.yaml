@@ -29,9 +29,6 @@ importers:
       '@tanstack/react-router':
         specifier: ^1.58.3
         version: 1.58.3(@tanstack/router-generator@1.58.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
-      '@tauri-apps/api':
-        specifier: ^1
-        version: 1.6.0
       class-variance-authority:
         specifier: ^0.7.0
         version: 0.7.0
@@ -56,6 +53,9 @@ importers:
       tailwindcss-animate:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.12)
+      tauri-plugin-store-api:
+        specifier: github:tauri-apps/tauri-plugin-store#v1
+        version: https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/395efb8380ff51a587faab5e9b52cacdb4d23a6c
       zod:
         specifier: ^3.23.8
         version: 3.23.8
@@ -1689,6 +1689,10 @@ packages:
     engines: {node: '>=14.0.0'}
     hasBin: true
 
+  tauri-plugin-store-api@https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/395efb8380ff51a587faab5e9b52cacdb4d23a6c:
+    resolution: {tarball: https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/395efb8380ff51a587faab5e9b52cacdb4d23a6c}
+    version: 0.0.0
+
   thenify-all@1.6.0:
     resolution: {integrity: sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==}
     engines: {node: '>=0.8'}
@@ -3226,6 +3230,10 @@ snapshots:
       sucrase: 3.35.0
     transitivePeerDependencies:
       - ts-node
+
+  tauri-plugin-store-api@https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/395efb8380ff51a587faab5e9b52cacdb4d23a6c:
+    dependencies:
+      '@tauri-apps/api': 1.6.0
 
   thenify-all@1.6.0:
     dependencies:
