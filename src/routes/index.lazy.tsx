@@ -13,10 +13,12 @@ import {
 } from "~/components/ui/table"
 import { useState, useEffect } from "react"
 import { Store } from "tauri-plugin-store-api"
+import { invoke } from "@tauri-apps/api/tauri"
 import { YOUTUBE_LINKS_KEY, STORE_NAME } from "~/constants"
 
 interface YouTubeLink {
 	url: string
+	// 0:"pending" | 1:"downloaded" | 2:"failed"
 	status: 0 | 1 | 2
 }
 
@@ -47,8 +49,15 @@ function DownloadPage() {
 		try {
 			await store.set(YOUTUBE_LINKS_KEY, updatedLinks)
 			await store.save()
+
+			const result = await invoke<{ success: boolean; message: string }>(
+				"download_youtube_video",
+				{ url },
+			)
+
+			console.log("🚀 ~ onConfirm ~ result:", result)
 		} catch (error) {
-			console.error("Failed to save link:", error)
+			console.error("Failed to download video:", error)
 		}
 	}
 
@@ -71,7 +80,7 @@ function DownloadPage() {
 					</TableRow>
 				</TableHeader>
 				<TableBody>
-					{links.map((link, index) => (
+					{links.map((link) => (
 						<TableRow key={link.url}>
 							<TableCell>{link.url}</TableCell>
 							<TableCell>{link.status}</TableCell>

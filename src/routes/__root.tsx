@@ -2,14 +2,6 @@ import { createRootRoute, Outlet, Link } from "@tanstack/react-router"
 import { TanStackRouterDevtools } from "@tanstack/router-devtools"
 import { Package2, Download, Info } from "lucide-react"
 import {
-	Breadcrumb,
-	BreadcrumbList,
-	BreadcrumbItem,
-	BreadcrumbLink,
-	BreadcrumbSeparator,
-	BreadcrumbPage,
-} from "~/components/ui/breadcrumb"
-import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
@@ -58,22 +50,6 @@ function Aside() {
 function MainContent() {
 	return (
 		<div className="flex-auto p-2">
-			<Breadcrumb>
-				<BreadcrumbList>
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/">Home</BreadcrumbLink>
-					</BreadcrumbItem>
-					<BreadcrumbSeparator />
-					<BreadcrumbItem>
-						<BreadcrumbLink href="/components">Components</BreadcrumbLink>
-					</BreadcrumbItem>
-					<BreadcrumbSeparator />
-					<BreadcrumbItem>
-						<BreadcrumbPage>Breadcrumb</BreadcrumbPage>
-					</BreadcrumbItem>
-				</BreadcrumbList>
-			</Breadcrumb>
-
 			<Outlet />
 		</div>
 	)
